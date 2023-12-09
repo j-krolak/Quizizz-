@@ -31,11 +31,7 @@ function getQuestion(){
         type: null
     };
     try {
-        question.text = '';
-        const questionHTML = document.getElementsByClassName('question-text-color')[0].children;
-        for(let i = 0; i < questionHTML.length; i++){
-            question.text += questionHTML[i].innerHTML + '\n';
-        }
+        question.text = document.getElementsByClassName('question-text-color')[0].innerHTML;      
 
         let answersHTML = document.getElementsByClassName('option');
         if(answersHTML.length < 2){
@@ -122,6 +118,7 @@ function fadeOut(element) {
 
     let timer = setInterval(function () {
         if (op <= 0.1){
+            element.style.display = 'none';
             clearInterval(timer);
             return;
         }
