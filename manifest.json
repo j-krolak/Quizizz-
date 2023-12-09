@@ -3,8 +3,13 @@
     "name": "Quizizz++",
     "description": "Rozszerzenie pozwalające na szybkie i dyskretne kopiowanie treści pytania na quizizz w przyjaznej formie dlat ChatGPT.",
     "version": "1.0",
+    "permissions": ["scripting", "activeTab"],
     "action": {
       "default_popup": "popup/index.html",
       "default_icon": "logo.png"
-    }
+    },
+    "content_scripts": [{
+        "matches": ["https://*.quizizz.com/join/game/*"],
+        "js": ["/scripts/quickCopy.js"]
+    }]
   }
