@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Quizizz++",
+    "description": "Rozszerzenie pozwalające na szybkie i dyskretne kopiowanie treści pytania na quizizz w przyjaznej formie dlat ChatGPT.",
+    "version": "1.0",
+    "action": {
+      "default_popup": "popup/index.html",
+      "default_icon": "logo.png"
+    }
+  }
