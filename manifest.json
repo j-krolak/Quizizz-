@@ -4,9 +4,18 @@
     "description": "Rozszerzenie pozwalające na szybkie i dyskretne kopiowanie treści pytania na quizizz w przyjaznej formie dlat ChatGPT.",
     "version": "1.0",
     "permissions": ["scripting", "activeTab"],
+    "icons": {
+        "128": "images/logo128.png",
+        "48": "images/logo48.png",
+        "16": "images/logo16.png"
+    },
     "action": {
       "default_popup": "popup/index.html",
-      "default_icon": "logo.png"
+      "default_icon": {
+        "128": "images/logo128.png",
+        "48": "images/logo48.png",
+        "16": "images/logo16.png"
+      }
     },
     "content_scripts": [{
         "matches": ["https://*.quizizz.com/join/game/*"],
