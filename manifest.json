@@ -20,5 +20,13 @@
     "content_scripts": [{
         "matches": ["https://*.quizizz.com/join/game/*"],
         "js": ["/scripts/quickCopy.js"]
-    }]
+    }],
+    "browser_specific_settings": {
+        "gecko": {
+          "id": "quizizzpp@quizizzpp.com"
+        },
+        "geck_android": {
+            "id": "quizizzpp@quizizzpp.com"
+        }
+    }
   }
