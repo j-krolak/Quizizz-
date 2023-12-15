@@ -1,0 +1,23 @@
+body {
+    background-color: white;
+    min-width: 400px;
+    min-height: 324px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    border-bottom: 2px solid black;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+}
+
+main h1 {
+    font-size: large !important;
+}
+
