@@ -1,7 +1,7 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "Quizizz++",
-    "description": "Rozszerzenie pozwalające na szybkie i dyskretne kopiowanie treści pytania na quizizz w przyjaznej formie dlat ChatGPT.",
+    "description": "Rozszerzenie pozwalające na szybkie i dyskretne kopiowanie treści pytania na quizizz w przyjaznej formie dlat chatów AI.",
     "version": "1.0",
     "permissions": ["scripting", "activeTab"],
     "icons": {
@@ -9,7 +9,7 @@
         "48": "images/logo48.png",
         "16": "images/logo16.png"
     },
-    "action": {
+    "browser_action": {
       "default_popup": "popup/index.html",
       "default_icon": {
         "128": "images/logo128.png",
@@ -20,13 +20,5 @@
     "content_scripts": [{
         "matches": ["https://*.quizizz.com/join/game/*"],
         "js": ["/scripts/quickCopy.js"]
-    }],
-    "browser_specific_settings": {
-        "gecko": {
-          "id": "quizizzpp@quizizzpp.com"
-        },
-        "geck_android": {
-            "id": "quizizzpp@quizizzpp.com"
-        }
-    }
+    }]
   }
