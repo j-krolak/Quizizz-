@@ -116,7 +116,7 @@ btn.innerHTML = "Klikaj tutaj";
 
 setTimeout(() => {
     btn.style.opacity = "0%";
-}, 3000)
+}, 5000)
 
 let timer = null;
 function fadeOut(element) {
