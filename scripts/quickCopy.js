@@ -99,24 +99,32 @@ labelDiv.style.opacity = '100%';
 labelDiv.style.textAlign  = 'center'
 labelDiv.style.padding = '10px';
 labelDiv.style.transform = 'translate(-50%, 0)';
-labelDiv.innerHTML = "Klikaj w obszar zaznaczony teraz na niebiesko aby kopiować treść pytania do schowka. <br>  (Kliknij tutaj aby schować ten komunikat)";
-
+labelDiv.style.pointerEvents = 'none';
 
 const btn= document.createElement('button');
 btn.style.position = 'fixed';
 btn.style.zIndex = 99999;
 btn.style.top = '0';
-btn.style.left = '0';
-btn.style.backgroundColor = 'blue';
-btn.style.width = '100%';
-btn.style.height = '100px';
+btn.style.right = '0';
+btn.style.border = '0.3rem solid red';
+btn.style.backgroundColor = "black";
+btn.style.width = '50%';
+btn.style.color = '#fff';
+btn.style.height = '64px';
 btn.style.opacity = "60%";
+btn.innerHTML = "Klikaj tutaj";
 
+setTimeout(() => {
+    btn.style.opacity = "0%";
+}, 3000)
+
+let timer = null;
 function fadeOut(element) {
     var op = 1;  // initial opacity
     element.style.display = 'block';
-
-    let timer = setInterval(function () {
+    if(timer != null)
+        clearInterval(timer);
+    timer = setInterval(function () {
         if (op <= 0.1){
             element.style.display = 'none';
             clearInterval(timer);
@@ -125,7 +133,7 @@ function fadeOut(element) {
         element.style.opacity = op;
         element.style.filter = 'alpha(opacity=' + op * 100 + ")";
         op -= op * 0.1;
-    }, 50);
+    }, 15);
 }
 
 
