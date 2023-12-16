@@ -1,4 +1,3 @@
-
 const QuestionType = {
     None:-1,
     Open:0,
@@ -50,6 +49,7 @@ function getQuestion(){
         console.error("There isn't a qustion!");
         console.log(error);
         question.type = QuestionType.None;
+        return question;
     }
     question.text = removeTags(question.text);
     question.answers = question.answers.map(removeTags);
@@ -60,8 +60,10 @@ function quickCopy(){
     const question = getQuestion();
 
     if(question.type === QuestionType.None){
+        labelDiv.innerHTML = "Wejdź na quiz";
         return;
     }
+
     let prompt = '';
 
     switch(question.type){
@@ -76,7 +78,7 @@ function quickCopy(){
             break;
     }
 
-    prompt += question.text;
+    prompt += question.text + '\n';
     if(question.type !== QuestionType.Open){
 
         for(let i = 1; i <= question.answers.length; i++){
@@ -84,8 +86,8 @@ function quickCopy(){
         }
     }
     navigator.clipboard.writeText(prompt);
+    labelDiv.innerHTML = "Skopiowano";
 
-    console.log(prompt);
 }
 
 
@@ -99,13 +101,13 @@ labelDiv.style.opacity = '100%';
 labelDiv.style.textAlign  = 'center'
 labelDiv.style.padding = '10px';
 labelDiv.style.transform = 'translate(-50%, 0)';
-labelDiv.style.pointerEvents = 'none';
 
 const btn= document.createElement('button');
 btn.style.position = 'fixed';
 btn.style.zIndex = 99999;
 btn.style.top = '0';
-btn.style.right = '0';
+btn.style.left = '50%';
+btn.style.transform = 'translate(-50%, 0)';
 btn.style.border = '0.3rem solid red';
 btn.style.backgroundColor = "black";
 btn.style.width = '50%';
@@ -140,7 +142,6 @@ function fadeOut(element) {
 const btnHTML = document.body.appendChild(btn);
 document.body.appendChild(labelDiv);
 btn.addEventListener('click', (e) => {
-    labelDiv.innerHTML = "Skopiowano";
     btn.style.opacity = "0";
     fadeOut(labelDiv);
     quickCopy();
