@@ -6,9 +6,9 @@ body {
 }
 
 header {
-    border-bottom: 2px solid black;
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: bold;
+    text-align: center;
 }
 
 a {
@@ -17,7 +17,10 @@ a {
     text-decoration: underline;
 }
 
-main h1 {
-    font-size: large !important;
+main{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
-
