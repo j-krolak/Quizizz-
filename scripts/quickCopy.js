@@ -68,13 +68,13 @@ function quickCopy(){
 
     switch(question.type){
         case QuestionType.OneChoice:
-            prompt += 'Wybierz tylko jedną z odpowiedź:\n';
+            prompt += 'Select only one correct answear:\n';
             break;
         case QuestionType.MultipleChoice:
-            prompt += 'Wybierz wszystkie poprawne odpowiedzi:\n';
+            prompt += 'Select all correct answears:\n';
             break;
         case QuestionType.Open:
-            prompt += 'Odpowiedz w co najwyżej jednym zdaniu.';
+            prompt += 'Provide the answer in one sentence:';
             break;
     }
 
